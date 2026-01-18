@@ -1,4 +1,250 @@
-<h1>Hello World!!</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Regali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-<a href="about.html"> clicca qui </a>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Lista regali */
+        .gift-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        /* Singolo regalo */
+        .gift-item {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gift-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        /* Icona/Emoji del regalo */
+        .gift-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            border-radius: 12px;
+        }
+
+        /* Info del regalo */
+        .gift-info {
+            flex: 1;
+        }
+
+        .gift-info h3 {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .gift-info p {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Prezzo */
+        .gift-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #667eea;
+            background: #f0f4ff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* Link */
+        .gift-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .gift-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Badge priorità (opzionale) */
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-high {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .badge-medium {
+            background: #feebc8;
+            color: #c05621;
+        }
+
+        .badge-low {
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .gift-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .gift-info {
+                order: 1;
+            }
+
+            .gift-price {
+                order: 2;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header - Personalizza titolo e sottotitolo -->
+        <header class="header">
+            <h1>🎁 La Mia Lista Regali</h1>
+            <p>Ecco qualche idea per farmi felice!</p>
+        </header>
+
+        <!-- Lista dei regali -->
+        <div class="gift-list">
+
+            <!-- REGALO 1 - Copia e modifica questo blocco per aggiungere regali -->
+            <div class="gift-item">
+                <div class="gift-icon">📚</div>
+                <div class="gift-info">
+                    <h3>Nome del Regalo</h3>
+                    <p>Breve descrizione del regalo che vorresti ricevere.</p>
+                    <a href="#" class="gift-link">Vedi su Amazon →</a>
+                </div>
+                <div class="gift-price">€ 29,99</div>
+            </div>
+
+            <!-- REGALO 2 - Esempio con badge priorità -->
+            <div class="gift-item">
+                <div class="gift-icon">🎧</div>
+                <div class="gift-info">
+                    <span class="badge badge-high">Molto desiderato</span>
+                    <h3>Cuffie Wireless</h3>
+                    <p>Cuffie bluetooth con cancellazione del rumore.</p>
+                    <a href="#" class="gift-link">Vedi su Amazon →</a>
+                </div>
+                <div class="gift-price">€ 149,00</div>
+            </div>
+
+            <!-- REGALO 3 -->
+            <div class="gift-item">
+                <div class="gift-icon">🎮</div>
+                <div class="gift-info">
+                    <span class="badge badge-medium">Carino da avere</span>
+                    <h3>Videogioco</h3>
+                    <p>L'ultimo capitolo della mia saga preferita.</p>
+                    <a href="#" class="gift-link">Vedi su Store →</a>
+                </div>
+                <div class="gift-price">€ 69,99</div>
+            </div>
+
+            <!-- REGALO 4 -->
+            <div class="gift-item">
+                <div class="gift-icon">👕</div>
+                <div class="gift-info">
+                    <span class="badge badge-low">Se avanza budget</span>
+                    <h3>Felpa</h3>
+                    <p>Felpa comoda per stare in casa. Taglia M.</p>
+                </div>
+                <div class="gift-price">€ 45,00</div>
+            </div>
+
+            <!-- Aggiungi altri regali copiando un blocco gift-item -->
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Grazie mille per aver pensato a me! 💜</p>
+        </footer>
+
+    </div>
+</body>
+</html>
