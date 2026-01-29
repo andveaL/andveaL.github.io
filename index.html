@@ -1,250 +1,280 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Regali</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Lista regali */
-        .gift-list {
-            display: grid;
-            gap: 20px;
-        }
-
-        /* Singolo regalo */
-        .gift-item {
-            background: white;
-            border-radius: 16px;
-            padding: 25px 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gift-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-        }
-
-        /* Icona/Emoji del regalo */
-        .gift-icon {
-            font-size: 2.5rem;
-            min-width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
-            border-radius: 12px;
-        }
-
-        /* Info del regalo */
-        .gift-info {
-            flex: 1;
-        }
-
-        .gift-info h3 {
-            font-size: 1.3rem;
-            color: #2d3748;
-            margin-bottom: 5px;
-        }
-
-        .gift-info p {
-            color: #718096;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Prezzo */
-        .gift-price {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #667eea;
-            background: #f0f4ff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        /* Link */
-        .gift-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .gift-link:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        /* Badge priorità (opzionale) */
-        .badge {
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-high {
-            background: #fed7d7;
-            color: #c53030;
-        }
-
-        .badge-medium {
-            background: #feebc8;
-            color: #c05621;
-        }
-
-        .badge-low {
-            background: #c6f6d5;
-            color: #276749;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            color: white;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .gift-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .gift-info {
-                order: 1;
-            }
-
-            .gift-price {
-                order: 2;
-                margin-top: 10px;
-            }
-        }
-    </style>
+    <title>La Mia Lista Regali</title>
 </head>
+
 <body>
-    <div class="container">
-        
-        <!-- Header - Personalizza titolo e sottotitolo -->
-        <header class="header">
-            <h1>🎁 La Mia Lista Regali</h1>
-            <p>Ecco qualche idea per farmi felice!</p>
-        </header>
+   
 
-        <!-- Lista dei regali -->
-        <div class="gift-list">
+    <header>
+        <h1>Piccola lista dei desideri 💫 </h1>
+        <p>Qui dentro troverai qualche idea per rendere la mia vita meno depressa</p>
+    </header>
 
-            <!-- REGALO 1 - Copia e modifica questo blocco per aggiungere regali -->
-            <div class="gift-item">
-                <div class="gift-icon">📚</div>
+    <div class="filter-container">
+        <label for="price-range">Quanto mi vuoi bene:        
+            <span class="happy">❤️</span>
+            <span id="price-value">100</span>
+        </label>
+        <input type="range" id="price-range" min="0" max="2400" step="10" value="100">
+    </div>
+
+
+
+    <div class="gift-budget">
+        <h2>Il minimo sindacale dell'affetto 🤏</h2>
+    </div>
+    
+    <div class="gift-list">
+
+
+        <div class="gift-item">
+            <div class="gift-icon">🧼</div>
                 <div class="gift-info">
-                    <h3>Nome del Regalo</h3>
-                    <p>Breve descrizione del regalo che vorresti ricevere.</p>
-                    <a href="#" class="gift-link">Vedi su Amazon →</a>
+                    <h3>Detergente Planet Waves Lemon Oil </h3>
+                    <p>Manutenzione per gli strumenti.</p>
+                    <a href="https://www.amazon.it/gp/product/B000BNSYHW?smid=A11IL2PNWYJU7H&psc=1" class="gift-link">Vedi sullo store →</a>
                 </div>
-                <div class="gift-price">€ 29,99</div>
-            </div>
-
-            <!-- REGALO 2 - Esempio con badge priorità -->
-            <div class="gift-item">
-                <div class="gift-icon">🎧</div>
-                <div class="gift-info">
-                    <span class="badge badge-high">Molto desiderato</span>
-                    <h3>Cuffie Wireless</h3>
-                    <p>Cuffie bluetooth con cancellazione del rumore.</p>
-                    <a href="#" class="gift-link">Vedi su Amazon →</a>
-                </div>
-                <div class="gift-price">€ 149,00</div>
-            </div>
-
-            <!-- REGALO 3 -->
-            <div class="gift-item">
-                <div class="gift-icon">🎮</div>
-                <div class="gift-info">
-                    <span class="badge badge-medium">Carino da avere</span>
-                    <h3>Videogioco</h3>
-                    <p>L'ultimo capitolo della mia saga preferita.</p>
-                    <a href="#" class="gift-link">Vedi su Store →</a>
-                </div>
-                <div class="gift-price">€ 69,99</div>
-            </div>
-
-            <!-- REGALO 4 -->
-            <div class="gift-item">
-                <div class="gift-icon">👕</div>
-                <div class="gift-info">
-                    <span class="badge badge-low">Se avanza budget</span>
-                    <h3>Felpa</h3>
-                    <p>Felpa comoda per stare in casa. Taglia M.</p>
-                </div>
-                <div class="gift-price">€ 45,00</div>
-            </div>
-
-            <!-- Aggiungi altri regali copiando un blocco gift-item -->
-
+            <div class="gift-price">€ 5,40</div>
         </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>Grazie mille per aver pensato a me! 💜</p>
-        </footer>
+        <div class="gift-item">
+            <div class="gift-icon">🎼</div>
+                <div class="gift-info">
+                    <h3>Harley Benton CTG-20 BK USB Clip Tuner</h3>
+                    <p>Accordatore per strumenti.</p>
+                    <a href="https://www.thomann.it/harley_benton_ctg_20_usb_clip_tuner.htm" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 9,90</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">💽</div>
+                <div class="gift-info">
+                    <h3>Marassi Deluxe - Ex-Otago</h3>
+                    <p>Il vinile ancora meglio.</p>
+                    <a href="https://garrinchadischi.myshopify.com/products/marassi-deluxe-ex-otago-2x-cd" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 15,00</div>
+        </div>
+               
+        <div class="gift-item">
+            <div class="gift-icon">💉</div>
+                <div class="gift-info">
+                    <h3>Kallocaina. Il siero della verità.</h3>
+                    <p>Libro di Karin Boye che sembra interessante, va bene qualsiasi edizione.</p>
+                    <a href="https://www.lafeltrinelli.it/kallocaina-siero-della-verita-nuova-libro-karin-boye/e/9788870918915" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 16,99</div>
+        </div>
+
+         <div class="gift-item">
+            <div class="gift-icon">💻</div>
+                <div class="gift-info">
+                    <h3>Cover Macbook air M4</h3>
+                    <p>Forse così non spacco di nuovo il pc.</p>
+                    <a href="https://www.amazon.it/gp/product/B0DXV361BP?smid=A354LYR09ENCIX&th=1" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 20,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">⌨️</div>
+                <div class="gift-info">
+                    <h3>EPOMAKER Mix cavo USB tipo C</h3>
+                    <p>Cavo usb C per tastiera (bianco).</p>
+                    <a href="https://www.amazon.it/EPOMAKER-meccanico-connettore-aviatore-rimovibile/dp/B09TPCKVYQ?crid=37WRKFZSAJNX9&dib=eyJ2IjoiMSJ9.9kfuiDL2jq7MMeOyvHWxM7LXb1KE4q8EvePQm_X_XWlbfSXxeBKuZcejibAsBxPW83uYQCpDe3ObL76PIEjfQvq1SuHl6KWPG1ZYt1H8m8mpYdz4zXx7unN4R9UH_Ne5O51AvYA4ERZRatwNut5PSnlQa0U4TuwveOYrfBd0HBASEH94lCChHQsMYIw7dKcSvuJKCLbkBb6zdqKk574q5Zb1-l5Gg9hg7jCJL64dE0L7lq91SXOsxCNBSHCM_BN1vpbjH0g09NAjENrBiAEX481u86anjEkFPhF80us1Iis.0h39XJ4qLwkDj3vnowNyROHuqmyM6J2zoXirMtV0ako&dib_tag=se&keywords=cavo%2Busb%2Btastiera%2Bmeccanica&qid=1769646299&sprefix=cavo%2Busb%2Btastiera%2Caps%2C236&sr=8-7&th=1" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 21,99</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">👩‍🎤</div>
+                <div class="gift-info">
+                    <h3>Tony Pitony al Flower festival</h3>
+                    <p>Non ha bisogno di presentazioni.</p>
+                    <a href="https://www.mailticket.it/evento/50664/tony-pitony-flowers-festival-2026" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 25,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">🎶</div>
+                <div class="gift-info">
+                    <h3>Biglietto per un concerto</h3>
+                    <p>Quello che volete basta che non sia troppo lontano altrimenti voglio compagnia (Metto Dice perché bisogna boicottare ticketone)</p>
+                    <a href="https://dice.fm/?lng=it" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 30,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">🎙️</div>
+                <div class="gift-info">
+                    <h3>Behringer C-2 Stereoset</h3>
+                    <p>Mi mancano per registrare gli strumenti.</p>
+                    <a href="https://www.thomann.it/behringer_c2_stereoset.htm" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 37,00</div>
+        </div>
 
     </div>
+
+    <div class="gift-budget">
+        <h2>Dimmi che mi vuoi bene senza dirmelo 💖</h2>
+    </div>
+
+
+    <div class="gift-list">
+
+        <div class="gift-item">
+            <div class="gift-icon">👜</div>
+                <div class="gift-info">
+                    <h3>Magma CTRL Case SP-404MK2</h3>
+                    <p>Custodia per SP-404 MK2. (Cercare il prezzo migliore, il link sotto è un consiglio)</p>
+                    <a href="https://www.thomann.it/magma_ctrl_case_sp_404mk2.htm" class="gift-link">Vedi nello store →</a>
+                </div>
+            <div class="gift-price">€ 44,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">⚙️</div>
+                <div class="gift-info">
+                    <h3>DOCKCASE Pocket M.2</h3>
+                    <p>Case per SSD esterno.</p>
+                    <a href="https://www.amazon.it/DOCKCASE-Pocket-NVMe-Smart-Enclosure/dp/B0CCS3596P?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=Q541YKM0W7RP&dib=eyJ2IjoiMSJ9.qwFVbe5IedWDOFolUZRpFDOY5rz_2cyJiaR8dF7il2U4JAjbGARh0H7MUqsUKyPoaCwJh_vdCxcNKCrUzaCrKK8EA0WNqMRly_kocTA2xDSxNvZfRvkIeGTEtJU66ahj50ZA0u9VzJ77jFzq7LuYuTEDW3Ln6dlit86VmLQzwPfxGYLe-IcnT_qL5ZUlUEmvZMXW4aicZOdnecA3WfzQwkou5FJk3_RckP_pa5VYV4hMH3XzU7Fih1_M9cD8o2pyWdUcuewnD79pEH2AtVSgTOWR8-w_VCbXNYAGRvVtuGA.OZ4mZ7PrfDr0HIn66I6uW7_zi0vTVwayOMpM5bD3ASg&dib_tag=se&keywords=ssd%2Bportatile%2Bcase%2BM.2%2B2230&qid=1769645319&sprefix=ssd%2Bportatile%2Bcase%2Bm.2%2B2230%2Caps%2C249&sr=8-28&th=1" class="gift-link">Vedi nello store →</a>
+                </div>
+            <div class="gift-price">€ 48,99</div>
+        </div>
+
+         <div class="gift-item">
+            <div class="gift-icon">🕐</div>
+                <div class="gift-info">
+                    <h3>Lemnos Wall Clock Kehai</h3>
+                    <p>Orologio da parete (giallo).</p>
+                    <a href="https://lemnosclocks.eu/en/product/lemnos-wall-clock-kehai/?srsltid=AfmBOoprHzk5yLutE8jg8y5rryzXgmLQqVly_LKas-EE2dRry-SPVgTx" class="gift-link">Vedi nello store →</a>
+                </div>
+            <div class="gift-price">€ 129,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">💡</div>
+                <div class="gift-info">
+                    <h3>Artemide Eclisse</h3>
+                    <p>Lampada da Tavolo (Arancione).</p>
+                    <a href="https://crottilampadari.it/products/artemide-eclisse-lampada-da-tavolo?srsltid=AfmBOops8aLCvwmG-CmhUGMKsrihUsajcodWqbD3cFx3Ng3BxUL15hmj&variant=49869811548487" class="gift-link">Vedi nello store →</a>
+                </div>
+            <div class="gift-price">€ 168,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">📀</div>
+                <div class="gift-info">
+                    <h3>Rega Planar 1 NEW Giradischi</h3>
+                    <p>Giradischi carino, se qualcuno conosce di meglio a meno va bene comunque</p>
+                    <a href="https://audioquality.it/products/rega-planar-1-new-giradischi" class="gift-link">Vedi nello store →</a>
+                </div>
+            <div class="gift-price">€ 360,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">🎹</div>
+                <div class="gift-info">
+                    <h3>ESI XSynth</h3>
+                    <p>Mini synth</p>
+                    <a href="https://www.thomann.it/esi_xsynth.htm" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 369,00</div>
+        </div>
+    </div>
+
+    <div class="gift-budget">
+        <h2>Qui si cura la mia depressione! 🚀</h2>
+    </div>
+
+    <div class="gift-list">
+
+        <div class="gift-item">
+            <div class="gift-icon">🔊</div>
+                <div class="gift-info">
+                    <h3>Teenage Engineering OB-4 black</h3>
+                    <p>Cassa portatile per musica e altro</p>
+                    <a href="https://teenage.engineering/store/ob-4-black" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 549,00</div>
+        </div>  
+
+
+        <div class="gift-item">
+            <div class="gift-icon">🌴</div>
+                <div class="gift-info">
+                    <h3>Martin Guitar C1K LH Concert</h3>
+                    <p>Ukulele mega figo (se lo cercate altrove controllate che sia mancino LH).</p>
+                    <a href="https://www.thomann.it/martin_guitars_c1k_lh_concert_ukulele.htm" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 638,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">🎡</div>
+                <div class="gift-info">
+                    <h3>Wheel of Fortune</h3>
+                    <p>Versione Judge almeno NM</p>
+                    <a href="https://www.cardmarket.com/en/Magic/Products/Singles/Judge-Rewards-Promos/Wheel-of-Fortune" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 1200,00</div>
+        </div>
+    </div>
+
+
+    <div class="gift-budget">
+        <h2>Se volevi cambiarmi la vita... ci sei riuscito ✨</h2>
+    </div>
+
+    <div class="gift-list">
+
+        <div class="gift-item">
+            <div class="gift-icon">🎸</div>
+                <div class="gift-info">
+                    <h3>Martin Guitar 000-15M Streetmaster LH</h3>
+                    <p>La chitarra acustica definitiva.</p>
+                    <a href="https://www.thomann.it/martin_guitars_000_15m_streetmaster_lh.htm" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 2333,00</div>
+        </div>
+
+        <div class="gift-item">
+            <div class="gift-icon">⌚</div>
+                <div class="gift-info">
+                    <h3>ORIS BIG CROWN POINTER DATE 80TH</h3>
+                    <p>Un bell'orologio.</p>
+                    <a href="https://www.misterelectronic.it/oris-big-crown-pointer-date-80th-anniversary-edition-01-754-7741-3167-07-5-20-58br/" class="gift-link">Vedi sullo store →</a>
+                </div>
+            <div class="gift-price">€ 2400,00</div>
+        </div>
+
+        <div class="gift-item" id="secret-boss" style="display: none;">
+            <div class="gift-icon">🃏</div>
+            <div class="gift-info">
+                <h3>Black Lotus</h3>
+                <p>Ovviamente edizione di Alpha almeno NM</p>
+                <a href="https://www.cardmarket.com/it/Magic/Products/Singles/Alpha/Black-Lotus" class="gift-link">Vedi sullo store →</a>
+            </div>
+            <div class="gift-price">€ ♾️</div>
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <p>Grazie mille per aver pensato a me! 💜</p>
+    </footer>
+
 </body>
+    <script src="script.js"></script>
 </html>
