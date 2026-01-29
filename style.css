@@ -1,0 +1,186 @@
+:root {
+    --primary: #818cf8;       /* Un viola/blu più luminoso per risaltare sul nero */
+    --accent: #fb7185;        /* Rosa acceso per i prezzi */
+    --bg-body: #0f172a;       /* Blu notte molto scuro per lo sfondo */
+    --card-bg: #1e293b;       /* Grigio scuro per le card */
+    --text-main: #f1f5f9;     /* Bianco sporco per i titoli */
+    --text-muted: #94a3b8;    /* Grigio per le descrizioni */
+    --border: #334155;        /* Colore per i bordi sottili */
+}
+
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-main);
+    padding: 40px 20px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.filter-container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+#price-range {
+    width: 100%;
+    accent-color: var(--primary); /* Colora lo slider di viola */
+    cursor: pointer;
+}
+
+#price-value {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+
+
+.gift-budget {
+    max-width: 1000px;
+    margin: 40px auto 20px auto; /* Spazio sopra e sotto il titolo */
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border); /* Linea di divisione */
+}
+
+.gift-budget h2 {
+    color: var(--primary); /* Il viola/blu del tema scuro */
+    font-size: 1.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Rimuoviamo la sfocatura dai singoli elementi e usiamo l'overlay */
+.out-of-budget::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.4); /* Un velo scuro trasparente */
+    backdrop-filter: blur(5px); /* SFOCA TUTTO QUELLO CHE STA SOTTO */
+    border-radius: 20px;
+    z-index: 5;
+}
+
+/* La scritta "Fuori Budget" rimane sopra l'overlay */
+.out-of-budget::after {
+    content: "Magari nella prossima vita... 🥲";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    background: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    z-index: 10; /* Sopra lo z-index 5 dell'overlay */
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#price-value {
+    display: none;
+}
+
+
+.gift-list {
+    display: grid;
+    /* Questa riga è magica: crea colonne da almeno 300px che si adattano da sole */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gift-item {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid #e2e8f0; /* Un leggero bordo per definire meglio la card */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Cambiato a column: l'icona starà sopra il testo */
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative; /* Necessario per posizionare la scritta sopra */
+    transition: all 0.4s ease;
+}
+
+.gift-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.gift-icon {
+    font-size: 3rem;
+    background: rgba(129, 140, 248, 0.1); /* Cerchio sfumato dietro l'emoji */
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.gift-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--text-main);
+}
+
+.gift-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.gift-link {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    width: 100%; /* Il bottone occupa tutta la larghezza della card */
+}
+
+.gift-link:hover {
+    background-color: #4f46e5;
+}
+
+.gift-price {
+    margin-left: auto;
+    font-weight: bold;
+    color: var(--accent);
+    background: #ecfdf5;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+
+
+.footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+}
+
+
+
+
