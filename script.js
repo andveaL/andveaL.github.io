@@ -42,15 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
             emoji_finale.textContent = "❤️".repeat(numeroCuori);
         }
 
-        const secretBoss = document.getElementById('secret-boss');
+        const secretBoss1 = document.getElementById('secret-boss-1');
+        const secretBoss2 = document.getElementById('secret-boss-2');
 
         if (maxPrice >= sliderMax) {
             // Quando lo slider è al massimo
-            secretBoss.style.display = "flex"; // Lo mostriamo
-            secretBoss.classList.remove('out-of-budget'); // Ci assicuriamo che non sia sfocato
+            secretBoss1.style.display = "flex"; // Lo mostriamo
+            secretBoss1.classList.remove('out-of-budget'); // Ci assicuriamo che non sia sfocato
+
+            secretBoss2.style.display = "flex"; // Lo mostriamo
+            secretBoss2.classList.remove('out-of-budget'); // Ci assicuriamo che non sia sfocato
         } else {
             // In tutti gli altri casi
-            secretBoss.style.display = "none"; // Sparisce completamente
+            secretBoss1.style.display = "none"; // Sparisce completamente
+            secretBoss2.style.display = "none"; // Sparisce completamente
         }
     });
 });
